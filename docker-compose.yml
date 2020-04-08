@@ -1,0 +1,39 @@
+version: '3.1'
+services:
+  # nginx server managing proxies
+  nginx:
+    image: nginx:1.17
+    restart: always
+    depends_on:
+      - node
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/api.conf:/etc/nginx/conf.d/api.conf
+    container_name: book_nginx
+
+  # mysql database
+  db:
+    image: mysql:8.0.18
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+    ports:
+      - "3306:3306"
+    volumes:
+      - my-db:/var/lib/mysql
+    container_name: book_db
+
+  node:
+    build: node
+    restart: always
+    command: npm start
+    volumes:
+      - ./node:/app/
+    depends_on:
+      - db
+    container_name: book_node
+
+volumes:
+  my-db:
