@@ -1,11 +1,12 @@
-#BookStore API
+# BookStore API
+
 A simple **unfinished** API for books with ExpressJS and Sequelize
 
-##Installation
+## Installation
 
 Make sure you have [docker-compose](https://docs.docker.com/compose/install/) installed
 
-##Usage
+## Usage
 
 Building first time:
 ```bash
