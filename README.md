@@ -8,7 +8,7 @@ Make sure you have [docker-compose](https://docs.docker.com/compose/install/) in
 
 ### Dump Sample data into MySQL
 
-Uncomment this line of code in `node/app.js`
+Comment this line of code in `node/app.js`
 
 ```js
 const dumpData = require('./middleware/dumpDatabase');
