@@ -19,7 +19,7 @@ app.use(logger('dev'));
 
 // EXECUTE THE LINE BELOW TO CREATE ALL TABLES
 // AND ALSO INSERT SOME DUMMY DATA
-// const dumpData = require('./middleware/dumpDatabase');
+const dumpData = require('./middleware/dumpDatabase');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
