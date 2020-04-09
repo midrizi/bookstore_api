@@ -11,9 +11,6 @@ const jwt = require('./_helpers/jwt');
 // access logging
 const accessLogStream = require('./middleware/access');
 app.use(logger('combined', { stream: accessLogStream }));
-// server error logging
-const errorLogStream = require('./middleware/error');
-app.use(logger('combined'), { stream: errorLogStream });
 
 app.use(logger('dev'));
 
