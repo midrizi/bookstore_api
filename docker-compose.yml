@@ -33,6 +33,7 @@ services:
     command: npm start
     volumes:
       - ./node:/app/
+      - /app/node_modules
     depends_on:
       - db
     container_name: book_node

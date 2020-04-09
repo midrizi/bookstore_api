@@ -1,11 +1,13 @@
 const winston = require('winston');
 const path = require('path');
 const fs = require('fs');
+const shelljs = require('shelljs');
 
+console.log(__dirname);
 const logDirectory = path.join(path.dirname(__dirname), 'logs', 'error.log');
 
 // ensure logs directory exists
-fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+fs.existsSync(logDirectory) || shelljs.mkdir('-p', logDirectory);
 
 const logger = winston.createLogger({
     format: winston.format.json(),
