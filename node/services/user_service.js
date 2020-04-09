@@ -125,6 +125,6 @@ async function updateUser(id, userParam) {
 /**
  *  @param {number} id User Id
  * */
-async function deleteUser(id{
+async function deleteUser(id ) {
     return User.destroy({ where: { id } });
 }
