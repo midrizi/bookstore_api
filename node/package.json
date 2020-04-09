@@ -27,6 +27,7 @@
     "rotating-file-stream": "^2.0.1",
     "sequelize": "^5.21.3",
     "sequelize-cli": "^5.5.1",
+    "shelljs": "^0.8.3",
     "winston": "^3.2.1"
   },
   "devDependencies": {
