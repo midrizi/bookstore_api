@@ -3,7 +3,6 @@ const path = require('path');
 const fs = require('fs');
 const shelljs = require('shelljs');
 
-console.log(__dirname);
 const logDirectory = path.join(path.dirname(__dirname), 'logs', 'error.log');
 
 // ensure logs directory exists

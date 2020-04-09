@@ -10,22 +10,22 @@ services:
       - "80:80"
     volumes:
       - ./nginx/api.conf:/etc/nginx/conf.d/api.conf
-    container_name: book_nginx
+    container_name: nginx
 
   # mysql database
-  db:
+  mysql:
     image: mysql:8.0.18
     restart: always
     command: --init-file /data/application/init.sql
     environment:
+      MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: books
     ports:
       - "3306:3306"
     volumes:
-      - my-db:/var/lib/mysql
       - ./init.sql:/data/application/init.sql
-    container_name: book_db
+    container_name: mysql
 
   node:
     build: node
@@ -35,8 +35,5 @@ services:
       - ./node:/app/
       - /app/node_modules
     depends_on:
-      - db
-    container_name: book_node
-
-volumes:
-  my-db:
+      - mysql
+    container_name: node

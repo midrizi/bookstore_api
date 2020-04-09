@@ -1,6 +1,6 @@
 let config = {
     production: {
-        mysqlDB: 'mysql://root:root@book_db/books',
+        mysqlDB: 'mysql://root:root@mysql/books',
         secret: 'THIS IS VERY SECRET',
 
         server: {
@@ -16,7 +16,7 @@ let config = {
             clientSecret: '<CLIENT SECRET>',
         },
 
-        mysqlDB: 'mysql://root:root@book_db/books',
+        mysqlDB: 'mysql://root:root@mysql/books',
         secret: 'THIS IS VERY SECRET',
 
         server: {
