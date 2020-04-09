@@ -1,11 +1,7 @@
 const db = require('../models');
-const mysql = require('mysql');
 
 (async () => {
     await db.sequelize.query('SET FOREIGN_KEY_CHECKS=0');
-
-    // creating database if it wasn't previously declared
-    await db.sequelize.query('CREATE database IF NOT EXISTS books');
 
     await db.sequelize.sync({ force: true });
 
