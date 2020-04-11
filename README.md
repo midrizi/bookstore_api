@@ -8,7 +8,7 @@ Make sure you have [docker-compose](https://docs.docker.com/compose/install/) in
 
 ### Dump Sample data into MySQL
 
-Comment this line of code in `node/app.js`
+Comment this line of code in `node/app.js` after first run.
 
 ```js
 const dumpData = require('./middleware/dumpDatabase');
@@ -18,7 +18,7 @@ const dumpData = require('./middleware/dumpDatabase');
 
 Building first time:
 ```bash
-docker-compose up --build -d
+docker-compose create
 ```
 
 Running:
